@@ -1,0 +1,10 @@
+<form [formGroup]="subtaskForm" (ngSubmit)="submit()" class="form-group">
+  <div class="div-wrapper">
+  <div class="subtask-creation-wrapper">
+    <input #subtaskInput formControlName="name" placeholder="New subtask name"/>
+  </div>
+  <div>
+    <button type="submit">+ Add Subtask</button>
+  </div>
+  </div>
+</form>

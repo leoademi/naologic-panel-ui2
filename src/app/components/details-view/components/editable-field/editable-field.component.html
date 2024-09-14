@@ -1,0 +1,16 @@
+<div class="field">
+  <img [src]="icon" alt="{{ label }} Icon" />
+  <label (click)="toggleEdit()">{{ label }}</label>
+  <div class="field-value">
+    <ng-container *ngIf="!isEditing; else editMode">
+      <span (click)="toggleEdit()">{{ formGroup?.get(fieldName)?.value }}</span>
+    </ng-container>
+    <ng-template #editMode>
+      <input [formControl]="formControl" (blur)="saveChanges()" />
+      <div *ngIf="formControl.invalid && (formControl.dirty || formControl.touched)">
+        <small *ngIf="formControl.errors?.['required']">This field is required.</small>
+        <small *ngIf="formControl.errors?.['minlength']">Minimum length is 3 characters.</small>
+      </div>
+    </ng-template>
+  </div>
+</div>

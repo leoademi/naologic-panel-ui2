@@ -1,0 +1,47 @@
+<app-panel-header></app-panel-header>
+
+<div class="panel-views">
+  <button (click)="selectView(1)" [class.selected]="selectedView === 1">
+    <img src="assets/icon-details.svg" alt="Details Icon"/>
+    Details
+  </button>
+  <button (click)="selectView(2)">
+    <img src="assets/icon-activity.svg" alt="Activity Icon"/>
+    Activity
+  </button>
+  <button (click)="selectView(3)">
+    <img src="assets/icon-comments.svg" alt="Comments Icon"/>
+    Comments
+  </button>
+  <button (click)="selectView(4)">
+    <img src="assets/icon-attachments.svg" alt="Attachments Icon"/>
+    Attachments
+  </button>
+</div>
+
+
+<div class="view-container" [ngSwitch]="selectedView">
+  <!-- This can also be improved by using dynamic component loading
+     to optimize the rendering when more views are added in the future. -->
+  <app-details-view *ngSwitchCase="1"></app-details-view>
+
+  <div *ngSwitchCase="2">
+    <h2>Activity View</h2>
+    <p>Activity data will go here.</p>
+  </div>
+
+  <div *ngSwitchCase="3">
+    <h2>Comments View</h2>
+    <p>Comments section will go here.</p>
+  </div>
+
+  <div *ngSwitchCase="4">
+    <h2>Attachments View</h2>
+    <p>Attachments will go here.</p>
+  </div>
+
+  <div *ngSwitchDefault>
+    <p>Select a view to display.</p>
+  </div>
+</div>
+

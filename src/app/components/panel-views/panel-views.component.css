@@ -1,0 +1,25 @@
+.panel-views {
+  display: flex;
+  gap: 10px;
+  margin-top: 20px;
+}
+
+.panel-views button {
+  padding: 10px 20px;
+  background-color: #f5f6fa;
+  color: #687196;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.panel-views button:hover {
+  color: #4244db;
+}
+
+.selected {
+  color: #4244db;
+}

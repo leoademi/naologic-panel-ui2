@@ -1,0 +1,40 @@
+.form-group {
+  display: flex;
+  align-items: center;
+  gap: 0.5em;
+}
+
+.form-group input {
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  margin-top: 15px;
+}
+
+form {
+  display: flex;
+  gap: 0.5em;
+  align-items: center;
+}
+
+button {
+  color: #687196;
+  border: none;
+  padding: 0.5em 1em;
+  border-radius: 4px;
+  cursor: pointer;
+  background-color: transparent;
+}
+
+.subtask-creation-wrapper {
+  display:flex;
+  flex-direction: column;
+  gap: 20px;
+  width: 350px;
+}
+
+.div-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}

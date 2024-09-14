@@ -1,0 +1,56 @@
+<div class="details-view">
+  <form [formGroup]="detailsForm">
+    <div>
+      <div class="field">
+        <img src="assets/icon-status.svg" alt="Status Icon"/>
+        <label>Status:</label>
+        <div class="field-value status-input">
+          {{ detailsForm.get('status')?.value }}
+        </div>
+      </div>
+
+      <app-editable-field
+        [formGroup]="detailsForm"
+        fieldName="assignee"
+        label="Assignee:"
+        icon="assets/icon-assignee.svg"
+        (save)="saveChanges('assignee')">
+      </app-editable-field>
+
+      <app-editable-field
+        [formGroup]="detailsForm"
+        fieldName="coOwner"
+        label="Co-owner:"
+        icon="assets/icon-coowner.svg"
+        (save)="saveChanges('coOwner')">
+      </app-editable-field>
+
+      <app-editable-field
+        [formGroup]="detailsForm"
+        fieldName="importance"
+        label="Importance:"
+        icon="assets/icon-importance.svg"
+        (save)="saveChanges('importance')">
+      </app-editable-field>
+
+      <app-editable-field
+        [formGroup]="detailsForm"
+        fieldName="customerName"
+        label="Customer Name:"
+        icon="assets/icon-customername.svg"
+        (save)="saveChanges('customerName')">
+      </app-editable-field>
+
+      <app-editable-field
+        [formGroup]="detailsForm"
+        fieldName="invoiceId"
+        label="Invoice ID:"
+        icon="assets/icon-invoiceid.svg"
+        (save)="saveChanges('invoiceId')">
+      </app-editable-field>
+    </div>
+  </form>
+
+  <app-subtasks></app-subtasks>
+
+</div>

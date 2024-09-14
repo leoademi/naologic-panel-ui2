@@ -1,0 +1,125 @@
+.subtasks-container {
+  width: 500px;
+}
+
+.progress-bar {
+  width: 50%;
+  background-color: #f3f3f3;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  overflow: hidden;
+  position: relative;
+  height: 20px;
+}
+
+.progress {
+  height: 100%;
+  background-color: #4caf50;
+  width: 0;
+  transition: width 0.3s ease;
+}
+
+.subtasks-panel {
+  margin-top: 16px;
+}
+
+.subtask-item {
+  display: flex;
+  align-items: center;
+  padding: 8px;
+  border-bottom: 1px solid #ddd;
+  gap: 20px;
+}
+
+.subtask-count {
+  color: #687196;
+}
+
+button {
+  background: #f44336;
+  color: white;
+  border: none;
+  padding: 4px 8px;
+  cursor: pointer;
+}
+
+.my-progress-bar {
+  margin-bottom: 1em;
+}
+
+.progress-bar-wrapper {
+  display:flex;
+  flex-direction: row-reverse;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 20px;
+}
+
+.subtask-lists-wrapper {
+  background-color: #fafbfd;
+  border: 1px solid #68719629;
+  border-radius: 10px;
+  padding: 10px;
+}
+
+.subtask-name {
+  border-bottom: 1px solid #edf1fa;
+}
+
+.subtask-circle {
+  width: 24px;
+  height: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  border: 2px solid #edf1fa;
+  cursor: pointer;
+}
+
+.subtask-circle:hover {
+  background-color: #ffdddd;
+  border-color: #ff0000;
+}
+
+.subtask-circle.new .circle {
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  background-color: transparent;
+}
+
+.checkmark-circle {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background-color: #4caf50;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+.checkmark {
+  width: 5px;
+  height: 10px;
+  border: solid white;
+  border-width: 0 2px 2px 0;
+  transform: rotate(45deg);
+  animation: checkmark-animation 0.3s ease-in-out;
+}
+
+@keyframes checkmark-animation {
+  0% {
+    width: 0;
+    height: 0;
+  }
+  50% {
+    width: 10px;
+    height: 0;
+  }
+  100% {
+    width: 10px;
+    height: 10px;
+  }
+}

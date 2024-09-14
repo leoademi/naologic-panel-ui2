@@ -1,0 +1,49 @@
+<div class="subtasks-container">
+  <div class="progress-bar-wrapper">
+    <div class="subtask-count">
+      {{ subtasks.length }} / {{ maxSubtasks }}
+    </div>
+    <div class="progress-bar">
+      <p-progressBar
+        [value]="progress"
+        [showValue]="true"
+        styleClass="my-progress-bar"
+      ></p-progressBar>
+    </div>
+    <h2>Subtasks</h2>
+  </div>
+
+  <div class="subtask-lists-wrapper">
+    <div class="subtask-name">
+      <p> Subtask Name</p>
+    </div>
+    <div class="subtasks-panel">
+      <div *ngFor="let control of subtasks.controls; let i = index">
+        <ng-container *ngIf="isFormGroup(control)">
+          <div class="subtask-item" [formGroup]="control">
+            <div
+              class="subtask-circle"
+              [ngClass]="{'new': isNewSubtask(control)}"
+              *ngIf="!isMaxSubtasks()"
+              (click)="removeSubtask(i)"
+            >
+              <div *ngIf="isNewSubtask(control)" class="circle"></div>
+            </div>
+            <div
+              class="checkmark-circle"
+              *ngIf="isMaxSubtasks()"
+            >
+              <div class="checkmark"></div>
+            </div>
+            <div>
+              <span *ngIf="!isEditing" (click)="toggleEdit()">{{ control.get('name')?.value }}</span>
+              <input *ngIf="isEditing" [(ngModel)]="tempName" (blur)="toggleEdit()" />
+            </div>
+          </div>
+        </ng-container>
+      </div>
+    </div>
+
+    <app-subtask-creation (addSubtask)="addSubtask($event)"></app-subtask-creation>
+  </div>
+</div>
